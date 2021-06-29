@@ -21,7 +21,7 @@ const FormField = ({ placeholder, onChange, icon, ...otherProps }) => {
                     placeholder={placeholder}
                     style={styles.textInput}
                     placeholderTextColor={COLORS.darkGrey}
-                    onChangeText={(text) => onChange(text)}
+                    onChangeText={onChange}
                     {...otherProps}
                 />
             </View>
@@ -29,7 +29,7 @@ const FormField = ({ placeholder, onChange, icon, ...otherProps }) => {
     );
 };
 
-const FormFieldPassword = ({ onChange }) => {
+const FormFieldPassword = ({ onChange, onBlur }) => {
     const [passwordVisibility, setPasswordVisibility] = useState(false);
     return (
         <View style={styles.container}>
@@ -48,6 +48,7 @@ const FormFieldPassword = ({ onChange }) => {
                     autoCompleteType="off"
                     onChangeText={(text) => onChange(text)}
                     autoCapitalize="none"
+                    onBlur={onBlur}
                 />
                 <TouchableOpacity
                     style={{
@@ -115,6 +116,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff0e5",
         borderRadius: 25,
         justifyContent: "center",
+        marginBottom: 10,
     },
     pickerText: {
         marginLeft: 5,
