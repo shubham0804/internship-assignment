@@ -1,4 +1,4 @@
-# internship-assignment
+# Internship Assignment Movie List (from api) with Login & Sign up Form
 
 *[Click here to open in Expo](https://expo.io/@shubham0804/geek-synergy-assignment)*
 
